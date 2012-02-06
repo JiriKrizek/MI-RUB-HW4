@@ -3,29 +3,25 @@ class Decipher
   MIN_CHAR_VAL=32
   # Maximal printable ascii value
   MAX_CHAR_VAL=126
+  # Crypt key
+  KEY = 7
 
   # Decrypt given variable
   def decipher(text)
-    unless text.respond_to?(:to_s)
-      fail TypeError.new("'text' needs 'to_s' capability")
-    end
     result = ""
+    
     text.to_s.each_char  do |c|
-      result << transform(c, -7)
+      result << transform(c, -KEY)
     end
     result
   end
 
   # Encrypt given variable
   def cipher(text)
-    unless text.respond_to?(:to_s)
-      fail TypeError.new("'text' needs 'to_s' capability")
-    end
-
     result = ""
 
     text.to_s.each_char  do |c|
-      result << transform(c, +7)
+      result << transform(c, +KEY)
     end
     result
   end
