@@ -32,7 +32,7 @@ class TestDecipher < Test::Unit::TestCase
 		assert_equal(d.cipher(input), input)
 	end
 
-	def test_non_printable
+	def test_printable
 		input = "a"
 
 		d = Decipher.new()
