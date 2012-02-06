@@ -28,19 +28,21 @@ class Decipher
     result
   end
 
+private
   def transform(char, shift)
     ch = char.ord+shift
     if(ch >= MIN_CHAR_VAL && ch <= MAX_CHAR_VAL)
       ch.chr
     else
-      ch
+      char
     end
   end
 end
 
 d = Decipher.new
-text = "1JKJ'pz'{ol'{yhklthyr'vm'{ol'Jvu{yvs'Kh{h'Jvywvyh{pvu5
-1PIT'pz'h'{yhklthyr'vm'{ol'Pu{lyuh{pvuhs'I|zpulzz'Thjopul'Jvywvyh{pvu5
-1KLJ'pz'{ol'{yhklthyr'vm'{ol'Kpnp{hs'Lx|pwtlu{'Jvywvyh{pvu5"
 
-print d.decipher(d.cipher(d.decipher(text)))
+File.open('input.txt', 'r') do |f|
+  while(line = f.gets)
+    p d.decipher(line.chomp)
+  end
+end
