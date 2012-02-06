@@ -39,4 +39,15 @@ class TestDecipher < Test::Unit::TestCase
 		assert_equal(d.decipher(input), "Z")
 		assert_equal(d.cipher(input), "h")
 	end
+
+	def test_empty
+		input = ""
+
+		d = Decipher.new()
+		assert_raises(ArgumentError) {
+			d.decipher(d.decipher(), "")
+		}
+		
+		assert_equal(d.decipher(""), "")
+	end
 end
