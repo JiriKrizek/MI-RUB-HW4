@@ -3,6 +3,10 @@
 # message that the characters contain. The code key for this simple coding is a one for one 
 # character substitution based upon a single arithmetic manipulation of the printable portion 
 # of the ASCII character set.
+#
+# Your program should accept all sets of characters that use the same encoding scheme and should 
+# print the actual message of each set of characters.
+#
 ####################################################################################################
 #
 #     Usage: ruby decipher.rb file1.txt file2.txt ...
