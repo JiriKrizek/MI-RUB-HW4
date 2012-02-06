@@ -47,7 +47,7 @@ class TestDecipher < Test::Unit::TestCase
 		assert_raises(ArgumentError) {
 			d.decipher(d.decipher(), "")
 		}
-		
+
 		assert_equal(d.decipher(""), "")
 	end
 end
